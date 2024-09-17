@@ -1,0 +1,62 @@
+.formulariodata{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    max-width:  500px;
+    width: 100%;
+
+    border: 1px solid #e5e5e5;
+    padding: 1em;
+    margin-top: 2em;
+    border-radius:20px;
+    & button{
+        background-color: #c30000;
+        padding: 1em;
+        margin-top: 1em;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all .5s ease;
+        color: white;
+        width: 100px;
+    } 
+
+    & button:hover{
+        transform: scale(.95);
+    }
+    
+    & button:active{
+        transform: scale(1.05);
+    }
+
+    & label{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    & input{
+        padding: 0.5em;
+        transition: all .5s ease;
+    }
+
+    & input:focus{
+        background-color: rgb(255, 204, 204);
+    }
+
+
+    & select{
+        padding: .5em;
+    }
+}
+
+
+.container-form-data{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
