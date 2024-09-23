@@ -1,7 +1,11 @@
+import '../../public/styles/inicio.css';
+
 
 const Inicio = () => {
+  
   return (
     <div className="App">
+      <div className="inicio-container">
     <h1 className='tittle'>TEST DE ORIENTACIÓN VOCACIONAL</h1>
     <p className='greeting'>¡Hola a todos!</p>
     <p className='description'>
@@ -11,10 +15,16 @@ const Inicio = () => {
         <br></br>
         Participar en este test es un paso importante para planificar su futuro y asegurarse de que elijan un camino que les entusiasme y les motive. No es solo un cuestionario, sino una oportunidad para conocerse mejor y explorar opciones que quizás no habían considerado antes.
         </p>
-        <div className='button-container' >
-        <a href="/formularioEstudiante" style={{ padding: "0.8em", background: "#c30000", textDecoration: "none", marginBottom: "2em",  border: "1px solid #e5e5e5", borderRadius:"8px", color: "white" }}>Comenzar</a>
-    </div>
 
+        <div className='background-immage'>
+        <div className='button-container'>
+          <a href="/formularioEstudiante" className="start-button">
+            Comenzar
+          </a>
+        </div>
+        </div>
+
+  </div>
   </div>
   )
 }
