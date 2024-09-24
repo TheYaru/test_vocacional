@@ -1,154 +1,144 @@
-/* Estilos generales */
-body {
-    margin: 0;
-    height: 100vh;
-  }
-  
-  .formdiv{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .section {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .navbar {
-    max-height: 8em;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1; /* Asegúrate de que el navbar esté por encima del formulario */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo img {
-    height: 50px;
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-  }
-  
-  .nav-links li {
-    margin-left: 20px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-  }
-  
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: black ;
-  }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #a00000;
-      width: 100%;
-      padding: 20px;
-    }
-    
-    .nav-links.open {
-      display: flex;
-    }
-    
-    .menu-toggle {
-      display: block;
-    }
-    
-    body.open .nav-links {
-      display: flex;
-    }
-  }
-  
-  .formulario {
-    margin-top: 60px; /* Ajusta este valor según la altura de tu navbar */
-  }
-  
-  .img1 {
-    width: 140px;
-    max-height: 200px;
-  }
-  
-  form {
-    max-width: 800px;
-    margin: 1em auto; /* Centra el formulario */
-    margin: 1em;
-    padding: 20px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-
-  label {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px; /* Añadir espacio alrededor de las etiquetas */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
-  
+
+body {
+  background: linear-gradient(135deg, #faf5f5, #e2c3c3); 
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 1em;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  color: #f5f6fa;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navbar nav {
+  display: flex;
+  border: none;
+  border-radius: 10px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  color: #c30000;
+}
+
+
+.formulario {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #2f3640;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #c30000;
+  padding-bottom: 0.5rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+
+label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  border-color: #c30000;
+  outline: none;
+  background-color: #ffffff;
+}
+
+select:hover {
+  background-color: #ffffff;
+}
+
+/* Submit Button */
+.botonEnviar {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 2rem;
+  background-color: #c30000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #c30000;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  background-color: #c30000;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .formulario {
+    padding: 1.5rem;
+  }
 
   select {
-    margin: 0.5em 0; /* Espacio vertical entre la etiqueta y el select */
-    width: calc(100% - 20px); /* Resta el padding para ajustar el ancho */
-    padding: 10px; /* Espacio interno */
-    border: 1px solid #000000;
-    border-radius: 4px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    font-size: 0.9rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem;
+  }
 }
-  
-  button { 
-    margin-top: 2em; 
-    padding: 1em;
-    width: 100px;
-    height: 3.3em;
-    background: #c30000; 
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 3em;
-  }
-  
-  .botonEnviar {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .section-title {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-  }
-  
-  .question {
-    margin-bottom: 20px;
-  }
-  

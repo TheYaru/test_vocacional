@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importamos useNavigate para redirigir
 import '../../public/styles/formulario2.css';
 
 function Formulario2() {
@@ -14,6 +15,8 @@ function Formulario2() {
     pregunta9: '',
   });
 
+  const navigate = useNavigate(); // Inicializamos navigate para redirigir
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setRespuestas((prevRespuestas) => ({
@@ -24,17 +27,26 @@ function Formulario2() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Respuestas del formulario:', respuestas);
-    // Aquí puedes enviar los datos a un servidor
-    alert(
-      '¡Gracias por completar el formulario! Tus respuestas son:\n ' +
-        JSON.stringify(respuestas, null, 2)
+
+    // Contamos cuántas veces se seleccionó cada opción (1 a 6)
+    const conteoRespuestas = {};
+    Object.values(respuestas).forEach((respuesta) => {
+      conteoRespuestas[respuesta] = (conteoRespuestas[respuesta] || 0) + 1;
+    });
+
+    // Obtenemos el número de respuesta más seleccionado
+    const respuestaMasSeleccionada = Object.keys(conteoRespuestas).reduce(
+      (a, b) => (conteoRespuestas[a] > conteoRespuestas[b] ? a : b)
     );
+
+    // Redirigimos a la página de resultados y pasamos el número más seleccionado
+    navigate(`/resultado`, { state: { respuestaMasSeleccionada } });
   };
 
   const toggleMenu = () => {
     document.body.classList.toggle('open');
   };
+
 
   return (
     <div className="formulario">
@@ -176,7 +188,7 @@ function Formulario2() {
           </label>
         </div>
 
-        {/* Sección 3: Preferencias de Estudio y Trabajo */}
+        
         <div id="seccion3" className="section">
           <h2>Sección 3: Preferencias de Estudio y Trabajo</h2>
           <label>
@@ -248,7 +260,6 @@ function Formulario2() {
           </label>
         </div>
 
-        {/* Botón de Envío */}
         <div className="botonEnviar">
           <button type="submit">Enviar</button>
         </div>

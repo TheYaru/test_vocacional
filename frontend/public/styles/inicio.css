@@ -1,37 +1,77 @@
 
 .inicio-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  background: linear-gradient(135deg, #faf5f5, #ffe4e4); 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor de la imagen */
+.image-container {
+  margin-bottom: 20px;
+}
+
+.background-img {
+  max-width: 100%;
+  height: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  max-width: 600px; 
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.start-button {
+  padding: 1em 2em;
+  background: #c30000;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.start-button:hover {
+  background-color: #a10000; 
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
   }
-  
-.background-image {
-    background-image: url('frontend/public/images/ImagenInicio.jpg'); /* Ruta relativa a la imagen en la carpeta public */
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}  
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 50px; 
-    text-align: center;
+
+  .description {
+    font-size: 1rem;
   }
-  
+
   .start-button {
-    padding: 0.8em;
-    background: #c30000;
-    text-decoration: none;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2em;
+    padding: 0.8em 1.5em;
+    font-size: 1rem;
   }
-  
+}
