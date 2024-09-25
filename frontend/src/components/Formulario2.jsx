@@ -134,7 +134,8 @@ function Formulario2() {
         <div id="seccion2" className="section">
           <h2>Sección 2: Habilidades</h2>
           <label>
-            4. ¿Qué te gusta hacer en tu tiempo libre?
+            4. ¿Cómo te describirías en cuanto a creatividad?
+
             <select
               name="pregunta4"
               value={respuestas.pregunta4}
@@ -142,17 +143,17 @@ function Formulario2() {
               required
             >
               <option value="">Selecciona una opción</option>
-              <option value="1">Dibujar y crear diseños visuales.</option>
-              <option value="2">Explorar estilos de moda y tendencias.</option>
-              <option value="3">Resolver problemas con tecnología y software.</option>
-              <option value="4">Leer sobre negocios y comercio internacional.</option>
-              <option value="5">Administrar dinero y planificar presupuestos.</option>
-              <option value="6">Organizar eventos y conocer nuevas culturas.</option>
+              <option value="1">Muy creativo, siempre tengo nuevas ideas para diseños visuales.</option>
+              <option value="2">Creativo en el diseño de ropa y moda.</option>
+              <option value="3">Creativo en la resolución de problemas tecnológicos.</option>
+              <option value="4">Creativo en la búsqueda de soluciones innovadoras para negocios.</option>
+              <option value="5">Creativo en la gestión financiera y en la optimización de recursos.</option>
+              <option value="6">Creativo en la organización de experiencias turísticas únicas.</option>
             </select>
           </label>
 
-          <label>
-            5. ¿Qué tipo de actividades disfrutas más?
+          <label>            
+            5. ¿Qué tan cómodo te sientes trabajando con números y análisis?
             <select
               name="pregunta5"
               value={respuestas.pregunta5}
@@ -160,17 +161,17 @@ function Formulario2() {
               required
             >
               <option value="">Selecciona una opción</option>
-              <option value="1">Crear gráficos y editar fotos.</option>
-              <option value="2">Diseñar ropa y accesorios.</option>
-              <option value="3">Programar y desarrollar aplicaciones.</option>
-              <option value="4">Negociar y aprender sobre mercados globales.</option>
-              <option value="5">Manejar finanzas y analizar datos económicos.</option>
-              <option value="6">Planear viajes y actividades turísticas.</option>
+              <option value="1">No mucho, prefiero enfocarme en lo visual.</option>
+              <option value="2">Solo cuando es necesario para mis diseños.</option>
+              <option value="3">Me gusta cuando se trata de programación y análisis de datos. </option>
+              <option value="4">Me siento muy cómodo analizando mercados y finanzas.</option>
+              <option value="5">Es mi fuerte, disfruto trabajar con números y estadísticas.</option>
+              <option value="6">Lo manejo bien, especialmente en el contexto de planificación de viajes.</option>
             </select>
           </label>
 
           <label>
-            6. ¿Cuál de las siguientes materias te interesa más?
+            6.  ¿Cómo te manejas en situaciones de presión?
             <select
               name="pregunta6"
               value={respuestas.pregunta6}
@@ -178,12 +179,12 @@ function Formulario2() {
               required
             >
               <option value="">Selecciona una opción</option>
-              <option value="1">Arte y Diseño.</option>
-              <option value="2">Textiles y Moda.</option>
-              <option value="3">Tecnología e Informática.</option>
-              <option value="4">Economía y Comercio.</option>
-              <option value="5">Matemáticas y Contabilidad.</option>
-              <option value="6">Geografía y Cultura.</option>
+              <option value="1">Prefiero trabajar a mi propio ritmo.</option>
+              <option value="2">Me manejo bien, especialmente si se trata de cumplir plazos creativos.</option>
+              <option value="3">Me gusta resolver problemas bajo presión.</option>
+              <option value="4">Disfruto el desafío de trabajar bajo presión en un entorno de negocios.</option>
+              <option value="5">Puedo manejar la presión cuando se trata de administrar dinero.</option>
+              <option value="6">Me adapto bien, especialmente en la planificación de eventos.</option>
             </select>
           </label>
         </div>
