@@ -1,74 +1,151 @@
-
+/* Contenedor principal */
 .inicio-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  height: 100vh; 
+  min-height: 100vh; /* Permite que el contenedor crezca según el contenido */
+  height: auto; /* Permite que el contenedor se ajuste a su contenido */
   position: relative;
-  overflow: hidden; 
+  overflow: hidden; /* Asegura que nada se desborde del contenedor */
+  color: #333;
+  font-family: 'Arial', sans-serif;
 }
 
-
-.image-container {
+/* Contenedor de imagen de fondo */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('https://www.fesc.edu.co/expo/3d/bloquec/img/fondo.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(5px); /* Desenfoca la imagen de fondo */
+  z-index: 1; /* Para que esté detrás del contenido */
 }
 
-.background-img {
-  width: 100%;
-  height: 100vh; 
-  object-fit: cover; 
-}
-
-
-.button-container {
+/* Overlay para mejorar la legibilidad del texto */
+.inicio-container::before {
+  content: "";
   position: absolute;
-  top: 70%; 
-  right: 2%; /* Ajusta más hacia la derecha */
-  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+  z-index: 2; /* Para que esté encima del fondo desenfocado */
+}
+
+/* Contenido */
+.content {
+  position: relative;
+  z-index: 3; /* Para que el contenido quede encima del overlay */
+  text-align: center;
+  max-width: 900px;
+  width: 90%; /* Ajustado para ser más pequeño en pantallas pequeñas */
+  background-color: rgba(255, 255, 255, 0.85); 
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Título y subtítulo */
+.title {
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Tarjetas de información */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustado para pantallas grandes */
+  gap: 20px; /* Espacio entre tarjetas */
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Íconos dentro de las tarjetas */
+.icon {
+  font-size: 2rem;
+  color: #c30000;
+  margin-bottom: 1rem;
+}
+
+/* Botón de comenzar */
+.button-container {
+  margin-top: 2rem;
 }
 
 .start-button {
-  padding: 1em 2em;
-  background-color: #c30000;
-  color: white;
-  text-decoration: none;
   font-size: 1.2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  padding: 15px 35px;
+  background-color: #c30000;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .start-button:hover {
-  background-color: #a10000;
+  background-color: #a30000;
+  transform: translateY(-2px);
 }
 
-/* Responsividad para pantallas pequeñas */
+.start-button:active {
+  background-color: #c30000;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .background-img {
-    height: auto; 
+  .inicio-container {
+    overflow-y: auto; /* Permite scroll en dispositivos móviles */
   }
 
-  .button-container {
-    top: 75%; /* Ajuste del botón para pantallas pequeñas */
-    right: 5%; /* Más espacio en pantallas pequeñas */
+  .info-cards {
+    grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    gap: 15px; /* Menos espacio entre tarjetas */
+  }
+
+  .content {
+    padding: 20px; /* Menos padding para pantallas pequeñas */
+  }
+
+  .title {
+    font-size: 2rem; /* Ajustado tamaño del título */
+  }
+
+  .subtitle {
+    font-size: 1rem; /* Ajustado tamaño del subtítulo */
   }
 
   .start-button {
-    padding: 0.8em 1.5em;
-    font-size: 1rem;
-  }
-}
-
-/* Ajuste para pantallas muy grandes */
-@media (min-width: 1200px) {
-  .start-button {
-    font-size: 1.5rem; 
-    padding: 1.2em 2.5em;
-  }
-
-  .button-container {
-    right: -19%; 
+    padding: 10px 20px; /* Ajustado padding para el botón */
   }
 }
